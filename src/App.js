@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Router from "./router/RouterOfTask";
+import HeaderOfTask from "./layout/HeaderOfTask";
 
 function App() {
   return (
     <div className="App">
-      
+      <HeaderOfTask/>
+      <Router />
     </div>
   );
 }

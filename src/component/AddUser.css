@@ -1,0 +1,23 @@
+.adduser{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.adduser input{
+    border-radius:10px;
+  padding:4px 20px;
+  padding-left: 8px;
+  opacity: 0.6;
+  border:none;
+  font-size: 20px;
+  color: #191515;
+}
+.adduser h1{
+    color:wheat;
+
+}
+.adduser ul{
+    color:wheat;
+}
