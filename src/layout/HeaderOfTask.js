@@ -1,24 +1,24 @@
-import { styled } from "styled-components"
-import React from "react"
-import { useNavigate } from "react-router-dom"
+import { styled } from "styled-components";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeaderOfTask = ()=>{
-    const navigate= useNavigate()
-    return(
-        <Container>
-            <header>
+  const navigate= useNavigate();
+  return(
+    <Container>
+      <header>
                 
-                    <p onClick={()=>navigate('items')}>Task 1</p>
-                    <p onClick={()=>navigate('users')}> Task 2</p>
-                    <p onClick={()=>navigate('reactApp')}>Task 3</p>
+        <p onClick={()=>navigate("items")}>Task 1</p>
+        <p onClick={()=>navigate("users")}> Task 2</p>
+        <p onClick={()=>navigate("reactApp")}>Task 3</p>
 
             
-            </header>
-        </Container>
-    )
-}
+      </header>
+    </Container>
+  );
+};
 
-export default HeaderOfTask
+export default HeaderOfTask;
 
 const Container = styled.div`
 width:100%;
@@ -36,4 +36,4 @@ display:flex;
     cursor: pointer;
     color:wheat;
  }
-`
+`;

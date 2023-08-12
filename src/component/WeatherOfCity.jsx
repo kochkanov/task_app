@@ -1,54 +1,52 @@
-import React from 'react'
-import styled from 'styled-components'
-import axios from 'axios'
-import { useState } from 'react'
+import React from "react";
+import styled from "styled-components";
+import axios from "axios";
+import { useState } from "react";
 
 
 const WeatherOfCity = ()=>{
-    const [city, setCity]= useState('')
-  const [weather, setWeather] = useState(null)
+  const [city, setCity]= useState("");
+  const [weather, setWeather] = useState(null);
 
-  const API_key = 'b6fdf74d6b2bd090d0a9f5e98c4d2754'
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_key}`
-  console.log(weather)
-  console.log(city)
+  const API_key = "b6fdf74d6b2bd090d0a9f5e98c4d2754";
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_key}`;
   
   const showCityWeather = async()=>{
     try{
-      const response = await axios.get(url)
-      setWeather(response.data)
+      const response = await axios.get(url);
+      setWeather(response.data);
     }catch (error){
-      console.log('Error')
+      console.log("Error");
     }
-    setCity('')
-  }
-    return (
-        <Container>
+    setCity("");
+  };
+  return (
+    <Container>
 
       
       <InWrap>
-      <WrapperInput>
-      <input type='text' placeholder="Search city" value={city} onChange={(e)=>setCity(e.target.value)} />
-      <button onClick={showCityWeather}>search</button>
-      </WrapperInput>
+        <WrapperInput>
+          <input type='text' placeholder="Search city" value={city} onChange={(e)=>setCity(e.target.value)} />
+          <button onClick={showCityWeather}>search</button>
+        </WrapperInput>
         {weather && (
-        <WrapWeather>
-          <p>{weather?.name} </p>
-                    <Temp>{weather?.main?.temp.toFixed()}°C</Temp>
-                    <p>{weather?.weather[0]?.description}
-                    <img
-                            src={`http://openweathermap.org/img/w/${weather?.weather[0].icon}.png`}
-                            alt={weather?.weather[0]?.description} /></p>
-                            </WrapWeather>
+          <WrapWeather>
+            <p>{weather?.name} </p>
+            <Temp>{weather?.main?.temp.toFixed()}°C</Temp>
+            <p>{weather?.weather[0]?.description}
+              <img
+                src={`http://openweathermap.org/img/w/${weather?.weather[0].icon}.png`}
+                alt={weather?.weather[0]?.description} /></p>
+          </WrapWeather>
         )}
 
       </InWrap>
 
-      </Container>
+    </Container>
 
-);
-}
-export default WeatherOfCity
+  );
+};
+export default WeatherOfCity;
 
 const Container = styled.div`
 display: flex;
@@ -59,11 +57,11 @@ align-items: center;
 padding-bottom: 100px;
 
 
-`
+`;
 const InWrap = styled.div`
   margin-top: 100px;
   
-`
+`;
 const WrapperInput = styled.div`
 justify-content:space-between;
 
@@ -79,9 +77,10 @@ justify-content:space-between;
   border:none;
   font-size: 20px;
   color: #191515;
-  
+  /* border-color: #f1aa25; */
   ::placeholder{
-    color: #191515;
+    color: #e9970a;
+    font: 100px;
     
   }
 }
@@ -93,15 +92,15 @@ justify-content:space-between;
   font-size: 20px;
   color: #191515;
   border: none;
-}`
+}`;
 const Temp = styled.span`
   font-size: 6rem;
   color:white;
   border:1px red;
-`
+`;
 
 const WrapWeather = styled.div`
 > p {
   font-size: 2rem;
   color: white;
-}`
+}`;

@@ -4,6 +4,7 @@ import "./AddUser.css";
 
 const AddUser = () => {
   function displayUsers(users) {
+    // eslint-disable-next-line no-undef
     userList.innerHTML = "";
     users.forEach((user) => {
       const listItem = document.createElement("li");
@@ -12,6 +13,7 @@ const AddUser = () => {
             <strong>Email:</strong> ${user.email}<br>
             <strong>Город:</strong> ${user.address.city}<br><br>
           `;
+      // eslint-disable-next-line no-undef
       userList.appendChild(listItem);
     });
   }
@@ -39,13 +41,13 @@ const AddUser = () => {
         });
         displayUsers(displayedUsers);
       })
-      .catch((error) => console.error("Error fetching users:", error));
-  };
+      .catch((error) => console.log("Error fetching users:", error));
+  }
 
   return (
     <div className="adduser">
       <h1>Список пользователей</h1>
-      <input onChange={(e)=>{searchInput(e)}}type="text" id="searchInput" placeholder="Поиск по имени" />
+      <input onChange={(e)=>{searchInput(e);}}type="text" id="searchInput" placeholder="Поиск по имени" />
       <ul id="userList"></ul>
     </div>
   );

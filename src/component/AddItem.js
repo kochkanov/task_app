@@ -4,7 +4,6 @@ import "./AddItem.css";
 const AddItem = () => {
   let itemCount = 1;
   function addItem() {
-    const addButton = document.getElementById("addItemButton");
     const itemList = document.getElementById("itemList");
     const newItem = document.createElement("li");
     newItem.textContent = `Item ${itemCount}`;
