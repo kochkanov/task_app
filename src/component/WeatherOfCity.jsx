@@ -9,7 +9,7 @@ const WeatherOfCity = ()=>{
   const [weather, setWeather] = useState(null);
 
   const API_key = "b6fdf74d6b2bd090d0a9f5e98c4d2754";
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_key}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_key}`;
   
   const showCityWeather = async()=>{
     try{
