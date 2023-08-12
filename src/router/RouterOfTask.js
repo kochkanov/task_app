@@ -11,7 +11,8 @@ const RouterOfTask = () => {
         <Route path="reactApp" element={<WeatherOfCity />} />
         <Route path="items" element={<AddItem />} />
         <Route path="users" element={<AddUser />} />
-      </Route>
+      </Route>{" "}
+      Í
     </Routes>
   );
 };
