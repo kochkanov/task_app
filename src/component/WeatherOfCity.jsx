@@ -55,15 +55,32 @@ justify-content:center;
 align-items: center;
 /* border:1px red solid; */
 padding-bottom: 100px;
-
-
 `;
 const InWrap = styled.div`
   margin-top: 100px;
-  
 `;
 const WrapperInput = styled.div`
 justify-content:space-between;
+/* width:; */
+@media screen and (max-width: 500px){
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+/* flex-direction: column; */
+justify-content:center;
+align-items: center;
+
+> input{
+  border-radius:10px;
+  padding:2px 7px;
+  padding-left: 8px;
+  opacity: 0.3;
+  border:none;
+  font-size: 20px;
+  color: #191515;
+  width: 40%;
+}
+}
 
 > h2{
   font-size: 35px;
@@ -80,8 +97,16 @@ justify-content:space-between;
   /* border-color: #f1aa25; */
   ::placeholder{
     color: #e9970a;
-    font: 100px;
     
+  }
+  @media screen and (max-width:500){
+    border-radius:10px;
+  padding:2px 7px;
+  padding-left: 8px;
+  opacity: 0.3;
+  border:none;
+  font-size: 20px;
+  color: #191515;
   }
 }
 > button{
@@ -103,4 +128,10 @@ const WrapWeather = styled.div`
 > p {
   font-size: 2rem;
   color: white;
+}
+@media screen and (max-width:500px){
+  display: flex;
+  justify-content:center;
+align-items: center;
+flex-direction: column;
 }`;
